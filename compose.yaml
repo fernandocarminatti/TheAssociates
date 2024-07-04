@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  postgres:
+    image: 'postgres:latest'
+    environment:
+      - 'POSTGRES_DB=TheAssociatesDB'
+      - 'POSTGRES_PASSWORD=${ASSOCIATE_PASS}'
+      - 'POSTGRES_USER=${ASSOCIATE}'
+    ports:
+      - '5432:5432'
+    volumes:
+      - 'associates-db-data:/var/lib/postgresql/associates-db'
+
+volumes:
+  associates-db-data:
